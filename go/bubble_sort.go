@@ -11,36 +11,24 @@ import (
     "strconv"
 )
 
-func copy(to_copy []int) []int {
-    copy := make([]int, len(to_copy))
-
-    for i, v := range to_copy {
-        copy[i] = v
-    }
-
-    return copy
-}
-
 func BubbleSort(unsorted []int) []int {
-    sorted := copy(unsorted)
-    count := len(sorted)
+    count := len(unsorted)
 
     for i := 0; i < count; i++ {
         for j := 0; j < (count - i - 1); j++ {
-            if sorted[j] > sorted[j + 1] {
-                t := sorted[j]
-                sorted[j] = sorted[j + 1]
-                sorted[j + 1] = t
+            if unsorted[j] > unsorted[j + 1] {
+                t := unsorted[j]
+                unsorted[j] = unsorted[j + 1]
+                unsorted[j + 1] = t
             }
         }
     }
 
-    return sorted
+    return unsorted
 }
 
 func main() {
     var input string
-    fmt.Printf("All elements must be integers\n")
 
     fmt.Printf("How many elements? ")
     fmt.Scanln(&input)
@@ -54,6 +42,6 @@ func main() {
         elements[i], _ = strconv.Atoi(input)
     }
 
-    fmt.Printf("Sorted:   %v\n", BubbleSort(elements))
     fmt.Printf("Unsorted: %v\n", elements)
+    fmt.Printf("Sorted:   %v\n", BubbleSort(elements))
 }

@@ -15,7 +15,6 @@ class Ratio
         int num;
         int[] elements;
 
-        Console.WriteLine("All elements must integers");
         Console.Write("How many elements? ");
 
         try {
@@ -28,8 +27,8 @@ class Ratio
                 elements[i] = int.Parse(Console.ReadLine());
             }
 
-            Console.WriteLine("Sorted:   [{0}]", string.Join(", ", BubbleSort(elements)));
             Console.WriteLine("Unsorted: [{0}]", string.Join(", ", elements));
+            Console.WriteLine("Sorted:   [{0}]", string.Join(", ", BubbleSort(elements)));
         }
         catch {
             Environment.Exit(1);
@@ -39,24 +38,22 @@ class Ratio
 
     private static int[] BubbleSort(int[] unsorted)
     {
-        var sorted = new int[unsorted.Length];
-        unsorted.CopyTo(sorted, 0);
-        var count = sorted.Length;
+        var count = unsorted.Length;
         int t;
 
         for (int i = 0; i < count; i++)
         {
             for (int j = 0; j < (count - i - 1); j++)
             {
-                if (sorted[j] > sorted[j + 1])
+                if (unsorted[j] > unsorted[j + 1])
                 {
-                    t = sorted[j];
-                    sorted[j] = sorted[j + 1];
-                    sorted[j + 1] = t;
+                    t = unsorted[j];
+                    unsorted[j] = unsorted[j + 1];
+                    unsorted[j + 1] = t;
                 }
             }
         }
 
-        return sorted;
+        return unsorted;
     }
 }

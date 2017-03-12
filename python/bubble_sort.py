@@ -19,7 +19,6 @@ def bubble_sort(unsorted):
 
     return sort
 
-print("All elements must be integers")
 num = input("How many elements? ")
 
 try:
@@ -32,5 +31,5 @@ try:
 except:
     exit(1)
 
-print("Sorted:   {0}".format(bubble_sort(elements)))
 print("Unsorted: {0}".format(elements))
+print("Sorted:   {0}".format(bubble_sort(elements)))

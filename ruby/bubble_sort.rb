@@ -5,23 +5,21 @@
 # accompanying LICENSE file or http://www.opensource.org/licenses/MIT.
 
 def bubble_sort(unsorted)
-  sorted = unsorted.clone
-  count = sorted.count
+  count = unsorted.count
 
    count.times do |i|
     (count - i - 1).times do |j|
-      if sorted[j] > sorted[j+1]
-        t = sorted[j]
-        sorted[j] = sorted[j+1]
-        sorted[j+1] = t
+      if unsorted[j] > unsorted[j+1]
+        t = unsorted[j]
+        unsorted[j] = unsorted[j+1]
+        unsorted[j+1] = t
       end
     end
   end
 
-  sorted
+  unsorted
 end
 
-puts 'All elements must be integers'
 print 'How many elements? '
 num = gets.to_i
 
@@ -30,5 +28,5 @@ elements = Array.new(num) do |i|
   gets.to_i
 end
 
-print "Sorted:   #{elements}\n"
-print "Unsorted: #{bubble_sort(elements)}\n"
+print "Unsorted: #{elements}\n"
+print "Sorted:   #{bubble_sort(elements)}\n"
