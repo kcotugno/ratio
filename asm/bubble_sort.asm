@@ -423,12 +423,12 @@ ltostr:
 
   pop     rdi
 
-  push r9
+  push    r9
 
   mov     rdx, r9
   call    flip            ; Flip the bytes
 
-  pop rax
+  pop     rax
 
   ret
 
